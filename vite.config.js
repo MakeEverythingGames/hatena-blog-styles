@@ -1,6 +1,9 @@
 import autoprefixer from "autoprefixer";
+import viteCompression from "vite-plugin-compression";
+import purgecss from "@fullhuman/postcss-purgecss";
 
 export default {
+  plugins: [viteCompression()],
   build: {
     rollupOptions: {
       input: ["scss/boilerplate.scss"],
@@ -9,12 +12,17 @@ export default {
       },
     },
     outDir: "build",
-    cssMinify: false,
+    cssMinify: true,
   },
   css: {
-    devSourcemap: true,
+    devSourcemap: false,
     postcss: {
-      plugins: [autoprefixer()],
-    },
+      plugins: [autoprefixer(),
+        purgecss({
+          content: ["blog/*.html"],
+          safelist: [/^entry/, /^archive/, /^page/]
+        }),
+      ]
+    }
   },
 };
