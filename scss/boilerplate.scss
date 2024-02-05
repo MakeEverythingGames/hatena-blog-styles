@@ -50,3 +50,73 @@
 #menu-switch:checked ~ .navbar-menu{
   display: block;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+.entry-content blockquote {
+  position: relative;
+  padding: 50px 15px 8px 15px;
+  box-sizing: border-box;
+  font-style: italic;
+  background: #efefef;
+  color: #555;
+}
+.entry-content blockquote:before{
+  display: inline-block;
+  position: absolute;
+  top: 5px;                    /* 13px → 5pxに変更 */                   
+  left: 8px;                   /* 15px → 8pxに変更 */                     
+  content: "“";               /* "\f10d"を全角初め引用符"“"に変更 */
+  font-family: "Rampart One";  /* font-family名FontAwesomeをRampart Oneに変更 */
+  color: #cfcfcf;              /* 引用符の色 変更しない */   
+  font-size: 65px;             /* 引用符の大きさ28pxを 65pxに変更 */  
+  line-height: 1;
+  font-weight: 400;            /* 900 → 400に変更 */
+}
+
+.entry-content blockquote p {
+  padding: 0;
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+.entry-content ul.table-of-contents {
+  position: relative;
+  padding: 0 0.5em;
+  margin-top: 2em;
+  list-style-type: none;
+  border: solid 2px #29B6F6;
+}
+.entry-content ul.table-of-contents li {
+  line-height: 1.5;
+  padding: 0.5em 0 0.5em 1.4em;
+  border-bottom: 1px dashed #81D4FA;
+
+  list-style: none;
+  margin-bottom: 0em;
+}
+.entry-content ul.table-of-contents li::before {
+  position: absolute;
+  content: "\002713";
+  color: #AB47BC;
+  font-weight: bold;
+  left : 0.5em;
+}
+
+.entry-content ul.table-of-contents li:last-of-type {
+	border-bottom: none;
+}
+
+ul.table-of-contents::after {
+  position: absolute;
+  content: "Table of Contents";
+  padding: 1px 7px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: .8em;
+  background: #29B6F6;
+  color: #fff;
+  bottom: 100%;
+  left: -2px;
+  border-radius: 4px 4px 0px 0px;
+}
