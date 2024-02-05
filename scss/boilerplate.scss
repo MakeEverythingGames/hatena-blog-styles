@@ -17,3 +17,36 @@
 
 @import "./lib/_variable";
 @import "./lib/_core";
+
+@import 'bulma/css/bulma.min.css';
+
+@import './_variables';
+
+@import './_mixins';
+
+@import './_typography';
+
+@import './_buttons';
+
+@import './_common';
+
+@import './templates/_navigation.scss';
+
+@import './templates/_main.scss';
+
+// モバイルのグローバルナビゲーションメニューの開閉動作
+#menu-switch {
+  display: none;
+}
+#menu-switch:checked + .navbar-brand .navbar-burger span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+#menu-switch:checked + .navbar-brand .navbar-burger span:nth-child(2) {
+  opacity: 0;
+}
+#menu-switch:checked + .navbar-brand .navbar-burger span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+#menu-switch:checked ~ .navbar-menu{
+  display: block;
+}
