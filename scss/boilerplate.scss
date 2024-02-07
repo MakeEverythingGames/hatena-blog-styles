@@ -37,86 +37,108 @@
 // モバイルのグローバルナビゲーションメニューの開閉動作
 #menu-switch {
   display: none;
-}
-#menu-switch:checked + .navbar-brand .navbar-burger span:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
-}
-#menu-switch:checked + .navbar-brand .navbar-burger span:nth-child(2) {
-  opacity: 0;
-}
-#menu-switch:checked + .navbar-brand .navbar-burger span:nth-child(3) {
-  transform: translateY(-5px) rotate(-45deg);
-}
-#menu-switch:checked ~ .navbar-menu{
-  display: block;
+
+  &:checked {
+    + .navbar-brand .navbar-burger {
+      span:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+
+    ~ .navbar-menu {
+      display: block;
+    }
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
-.entry-content blockquote {
-  position: relative;
-  padding: 50px 15px 8px 15px;
-  box-sizing: border-box;
-  font-style: italic;
-  background: #efefef;
-  color: #555;
-}
-.entry-content blockquote:before{
-  display: inline-block;
-  position: absolute;
-  top: 5px;                    /* 13px → 5pxに変更 */                   
-  left: 8px;                   /* 15px → 8pxに変更 */                     
-  content: "“";               /* "\f10d"を全角初め引用符"“"に変更 */
-  font-family: "Rampart One";  /* font-family名FontAwesomeをRampart Oneに変更 */
-  color: #cfcfcf;              /* 引用符の色 変更しない */   
-  font-size: 65px;             /* 引用符の大きさ28pxを 65pxに変更 */  
-  line-height: 1;
-  font-weight: 400;            /* 900 → 400に変更 */
+.entry-content {
+  @extend .content;
+
+  blockquote {
+    position: relative;
+    padding: 50px 15px 8px;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #f0f0f0;
+    color: #555;
+
+    &:before {
+      display: inline-block;
+      position: absolute;
+      top: 5px;
+      left: 8px;
+      content: "“";
+      font-family: "Rampart One";
+      color: #ce8460;
+      font-size: 65px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    p {
+      padding: 0;
+      margin: 10px 0;
+      line-height: 1.7;
+    }
+  }
 }
 
-.entry-content blockquote p {
-  padding: 0;
-  margin: 10px 0;
-  line-height: 1.7;
-}
+.entry-content {
+  ul.table-of-contents {
+    position: relative;
+    padding: 0 0.5em;
+    margin-top: 2em;
+    list-style-type: none;
+    border: solid 2px #f0f0f0;
 
-.entry-content ul.table-of-contents {
-  position: relative;
-  padding: 0 0.5em;
-  margin-top: 2em;
-  list-style-type: none;
-  border: solid 2px #29B6F6;
-}
-.entry-content ul.table-of-contents li {
-  line-height: 1.5;
-  padding: 0.5em 0 0.5em 1.4em;
-  border-bottom: 1px dashed #81D4FA;
+    &:after {
+      position: absolute;
+      content: "Table of Contents";
+      padding: 1px 7px;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+      font-size: .8em;
+      background: #f0f0f0;
+      color: #1c1d1f;
+      bottom: 100%;
+      left: -2px;
+      border-radius: 4px 4px 0px 0px;
+    }
 
-  list-style: none;
-  margin-bottom: 0em;
-}
-.entry-content ul.table-of-contents li::before {
-  position: absolute;
-  content: "\002713";
-  color: #AB47BC;
-  font-weight: bold;
-  left : 0.5em;
-}
+    li {
+      line-height: 1.5;
+      padding: 0.5em 0 0.5em 1.4em;
+      border-bottom: 1px dashed #81D4FA;
+      list-style: none;
+      margin-bottom: 0em;
 
-.entry-content ul.table-of-contents li:last-of-type {
-	border-bottom: none;
-}
+      &:before {
+        position: absolute;
+        content: "*";
+        color: #ce8460;
+        font-weight: bold;
+        font-family: "Rampart One";
+        left : 3px;
+        background: initial;
+        border-radius: initial;
+        top: initial;
+        width: initial;
+        height: initial;
+      }
 
-ul.table-of-contents::after {
-  position: absolute;
-  content: "Table of Contents";
-  padding: 1px 7px;
-  letter-spacing: 0.05em;
-  font-weight: bold;
-  font-size: .8em;
-  background: #29B6F6;
-  color: #fff;
-  bottom: 100%;
-  left: -2px;
-  border-radius: 4px 4px 0px 0px;
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
 }
