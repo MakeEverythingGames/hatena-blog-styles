@@ -34,7 +34,9 @@
 
 @import './templates/_main.scss';
 
-// モバイルのグローバルナビゲーションメニューの開閉動作
+// TODO: Currently, this is hardcoded in this file, but it will be organized and separated into another SCSS file.
+
+// Toggle operation of the mobile global navigation menu
 #menu-switch {
   display: none;
 
@@ -61,6 +63,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
+// Customized the style of blockquotes
 .entry-content {
   @extend .content;
 
@@ -93,6 +96,7 @@
   }
 }
 
+// Customized the style of the table of contents
 .entry-content {
   ul.table-of-contents {
     position: relative;
