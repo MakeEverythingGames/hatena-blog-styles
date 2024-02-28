@@ -93,6 +93,12 @@
       margin: 10px 0;
       line-height: 1.7;
     }
+
+    // 引用無いのスタイルを通常の引用文と合わせるため
+    li {
+      font-weight: 400;
+      font-size: 14px;
+    }
   }
 }
 
@@ -144,5 +150,117 @@
         border-bottom: none;
       }
     }
+  }
+}
+
+.entry-content {
+  h2 {
+    $gcolor1: rgba(206, 132, 96, 0.55);
+    $gcolor2: rgba(206, 132, 96, 0.30);
+    $gcolorborder1: rgba(206, 132, 96, 0.60);
+    $gcolorborder2: rgba(206, 132, 96, 0.50);
+    margin-bottom: 2rem;
+    background-image: linear-gradient(90deg, transparent, $gcolor1 30%, $gcolor2 50%, $gcolor1 70%, transparent);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-y: center;
+    border-radius: 90px 90px 0 0;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-image:
+            linear-gradient(90deg, transparent, $gcolorborder1 30%, $gcolorborder2 50%, $gcolorborder1 70%, transparent) 1;
+    text-align: center;
+    font-weight: bold;
+    $shadowcolor: rgba(255, 255, 255, 0.8);
+    color: #694949;
+    text-shadow:
+            1px 1px 2px $shadowcolor,
+            -1px -1px 2px $shadowcolor,
+            1px -1px 2px $shadowcolor,
+            -1px 1px 2px $shadowcolor,
+            1px 1px 2px $shadowcolor;
+  }
+
+  h3 {
+    $shadowcolor: rgba(255, 248, 243, 0.8);
+    margin-bottom: 1em;
+    position: relative;
+    left: -10px;
+    color: #4b4b4b;
+    text-shadow:
+            1px 1px 2px $shadowcolor,
+            -1px -1px 2px $shadowcolor,
+            1px -1px 2px $shadowcolor,
+            -1px 1px 2px $shadowcolor,
+            1px 1px 2px $shadowcolor;
+
+  }
+
+  h3::before {
+    z-index: -1;
+    position: absolute;
+    content: " ";
+    top: -8px;
+    left: -40px;
+    width: 60%;
+    height: 100%;
+    padding: 0.5rem 0;
+    background-image: linear-gradient(135deg, #F0FF00 10%, rgb(155, 25, 15, 0.4) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-x: 0;
+    background-position-y: bottom;
+    clip-path: polygon(0 0, calc(100% - 1vw) 0, 100% calc(100% - 1vw), calc(0.5vw) 100%);
+  }
+
+  h4 {
+    position: relative;
+    padding-left: 10px;
+    $shadowcolor: rgba(255, 248, 243, 0.8);
+    text-shadow:
+            1px 1px 2px $shadowcolor,
+            -1px -1px 2px $shadowcolor,
+            1px -1px 2px $shadowcolor,
+            -1px 1px 2px $shadowcolor,
+            1px 1px 2px $shadowcolor;
+  }
+
+  h4::before {
+    z-index: -1;
+    position: absolute;
+    content: " ";
+    top: 14px;
+    left: 0px;
+    width: 30%;
+    height: 30%;
+    padding: 0.5rem 0;
+    background-image: linear-gradient(135deg, #F0FF00 10%, rgb(155, 25, 15, 0.4) 50%, transparent 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-x: 0;
+    background-position-y: bottom;
+    clip-path: polygon(0 0, calc(100% - 1vw) 0, 100% calc(100% - 1vw), calc(0.5vw) 100%);
+  }
+
+  h5 {
+    display: inline-block;
+    padding: 0.5rem 0;
+    background-image: linear-gradient(135deg, #F0FF00 10%, rgb(155, 25, 15, 0.4) 100%);
+    background-repeat: no-repeat;
+    background-size: auto 0.3rem;
+    background-position: bottom;
+    color: #353535;
+  }
+
+  h6 {
+    display: inline-block;
+    padding: 0.5rem 0;
+    background-image: linear-gradient(135deg, #F0FF00 10%, rgb(155, 25, 15, 0.4) 100%);
+    background-repeat: no-repeat;
+    background-size: auto 0.1rem;
+    background-position: bottom;
+    color: #353535;
   }
 }
