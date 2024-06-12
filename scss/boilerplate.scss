@@ -18,7 +18,30 @@
 @import "./lib/_variable";
 @import "./lib/_core";
 
-@import 'bulma/css/bulma.min.css';
+//@import 'bulma/css/versions/bulma-no-dark-mode.css';
+//@forward "utilities";
+//@forward "themes";
+//@forward "base";
+//@forward "elements";
+//@forward "form";
+//@forward "components";
+//@forward "grid";
+//@forward "layout";
+//@forward "base/skeleton";
+//@forward "helpers";
+//@import 'bulma/sass/helpers/index';
+//@import 'bulma/sass/layout/index';
+//@import 'bulma/sass/grid/index';
+//@import 'bulma/sass/components/index';
+//@import 'bulma/sass/elements/index';
+//@import 'bulma/sass/base/index';
+//@import 'bulma/sass/themes/setup';
+//@import 'bulma/sass/themes/light';
+//@import 'bulma/sass/utilities/index';
+//@import 'bulma/sass/components/card';
+//@import 'bulma/sass/components/navbar';
+
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/versions/bulma-no-dark-mode.min.css";
 
 @import './_variables';
 
@@ -138,7 +161,7 @@
         color: #ce8460;
         font-weight: bold;
         font-family: "Rampart One";
-        left : 3px;
+        left: 3px;
         background: initial;
         border-radius: initial;
         top: initial;
@@ -169,18 +192,16 @@
     border-top-style: solid;
     border-bottom-width: 3px;
     border-bottom-style: solid;
-    border-image:
-            linear-gradient(90deg, transparent, $gcolorborder1 30%, $gcolorborder2 50%, $gcolorborder1 70%, transparent) 1;
+    border-image: linear-gradient(90deg, transparent, $gcolorborder1 30%, $gcolorborder2 50%, $gcolorborder1 70%, transparent) 1;
     text-align: center;
     font-weight: bold;
     $shadowcolor: rgba(255, 255, 255, 0.8);
     color: #694949;
-    text-shadow:
-            1px 1px 2px $shadowcolor,
-            -1px -1px 2px $shadowcolor,
-            1px -1px 2px $shadowcolor,
-            -1px 1px 2px $shadowcolor,
-            1px 1px 2px $shadowcolor;
+    text-shadow: 1px 1px 2px $shadowcolor,
+    -1px -1px 2px $shadowcolor,
+    1px -1px 2px $shadowcolor,
+    -1px 1px 2px $shadowcolor,
+    1px 1px 2px $shadowcolor;
   }
 
   h3 {
@@ -189,12 +210,11 @@
     position: relative;
     left: -10px;
     color: #4b4b4b;
-    text-shadow:
-            1px 1px 2px $shadowcolor,
-            -1px -1px 2px $shadowcolor,
-            1px -1px 2px $shadowcolor,
-            -1px 1px 2px $shadowcolor,
-            1px 1px 2px $shadowcolor;
+    text-shadow: 1px 1px 2px $shadowcolor,
+    -1px -1px 2px $shadowcolor,
+    1px -1px 2px $shadowcolor,
+    -1px 1px 2px $shadowcolor,
+    1px 1px 2px $shadowcolor;
 
   }
 
@@ -219,12 +239,11 @@
     position: relative;
     padding-left: 10px;
     $shadowcolor: rgba(255, 248, 243, 0.8);
-    text-shadow:
-            1px 1px 2px $shadowcolor,
-            -1px -1px 2px $shadowcolor,
-            1px -1px 2px $shadowcolor,
-            -1px 1px 2px $shadowcolor,
-            1px 1px 2px $shadowcolor;
+    text-shadow: 1px 1px 2px $shadowcolor,
+    -1px -1px 2px $shadowcolor,
+    1px -1px 2px $shadowcolor,
+    -1px 1px 2px $shadowcolor,
+    1px 1px 2px $shadowcolor;
   }
 
   h4::before {
@@ -262,5 +281,25 @@
     background-size: auto 0.1rem;
     background-position: bottom;
     color: #353535;
+  }
+
+  .highlighted {
+    padding: 0.2rem;
+    margin-bottom: 0.2rem;
+    background: linear-gradient(transparent 60%, rgba(129, 212, 250, 0.4) 60%);
+  }
+}
+
+@media (max-width: 1023px) {
+  .navbar .has-dropdown .navbar-dropdown {
+    display: block;
+  }
+
+  .navbar .has-dropdown .navbar-dropdown {
+    box-shadow: none;
+  }
+
+  .navbar-item {
+    text-align: left;
   }
 }
